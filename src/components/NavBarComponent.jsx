@@ -14,13 +14,13 @@ const NavBarComponent = () => {
             alt="Flowbite Logo"
           />
           <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            Flowbite
+            WillDev
           </span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            class="text-white bg-gradient-to-r from-green-500 to-green-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-blue-600 hover:bg-blue-700 focus:ring-green-700"
           >
             Contáctame
           </button>

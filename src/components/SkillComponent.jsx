@@ -56,8 +56,8 @@ const SkillsSection = () => {
     ];
 
     return (
-        <section className="py-12 bg-gray-900 text-white">
-        <div onMouseEnter={handleMouseEnter} className={`flex flex-col items-center container mx-auto px-4 tr transition-opacity duration-1000 ${isVisible ? `opacity-100` : `opacity-0`}  `}>
+        <section onMouseEnter={handleMouseEnter} className="py-12 bg-gray-900 text-white md:h-svh sm:h-full">
+        <div  className={`flex flex-col items-center container mx-auto px-4 tr transition-opacity duration-1000 ${isVisible ? `opacity-100` : `opacity-0`}  `}>
             <h2 className="text-3xl font-bold mb-8 text-center">Mis habilidades</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-[60em] ">
             {skillsData.map((skill, index) => (
