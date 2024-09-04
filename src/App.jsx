@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBarComponent from './components/NavBarComponent';
 import SkillComponent from './components/SkillComponent';
 import rocket from "./assets/rocket.svg"
+import PresentComponent from './components/PresentPage';
 
 const App = () => {
   const [text, setText] = useState("");
@@ -57,18 +58,16 @@ const App = () => {
       if(isVisible){
         setTimeout(() => {
           setTransition(true)
-        }, 1000)
+        }, 500)
       }
 
 
       return () => clearTimeout(timeout);
   }, [text, isDeleting, currentIndex, fullText, finalText, chooseText, setCount, setIsVisible, isVisible]);
 
-
-  const handleMouseEnter = () => {
-    setStart(true)
-  }
-
+const handleMouseEnter = ()=>{
+  setStart(true)
+}
 
   if(!isVisible){
     return (
@@ -96,8 +95,9 @@ const App = () => {
   }else{
     return (
       
-      <div >
+      <div className='bg-gray-900'>
             <NavBarComponent transition={transition}></NavBarComponent>
+            <PresentComponent transition={transition}></PresentComponent>
             <SkillComponent transition={transition}></SkillComponent>
       </div>
     );

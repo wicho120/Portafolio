@@ -18,7 +18,10 @@ module.exports = {
       },
       animation: {
         'despegar-y-desvanecer': 'despegue 1s ease-in-out forwards, desvanecer 1s 1s forwards',
-      }
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to bottom,  rgb(17, 24, 39), rgb(249, 250, 251))',
+      },
     },
   },
   plugins: [],

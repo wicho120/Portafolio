@@ -1,9 +1,9 @@
 import React from "react";
 
-const NavBarComponent = () => {
+const NavBarComponent = (transition) => {
   return (
-    <nav class="border-gray-200 bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav class="top-0 sticky bg-gradient-to-b from-gray-800 to-transparent backdrop-blur">
+      <div class={`max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>
         <a
           href="https://flowbite.com/"
           class="flex items-center space-x-3 rtl:space-x-reverse"
@@ -53,7 +53,7 @@ const NavBarComponent = () => {
           class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-cta"
         >
-          <ul class="flex flex-col bg-gray-800 md:bg-gray-900 border-gray-700 font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul class="flex flex-col border-gray-700 font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
               <a
                 href="#"
@@ -83,6 +83,7 @@ const NavBarComponent = () => {
         </div>
       </div>
     </nav>
+
   );
 };
 
