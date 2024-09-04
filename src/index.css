@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cohete {
+    @apply relative animate-despegar-y-desvanecer; 
+  }

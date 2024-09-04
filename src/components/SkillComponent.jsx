@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SkillCard = ({ icon, title, description, isVisible }) => {
+const SkillCard = ({ icon, title, description}) => {
 
     return (
         <div className="skill-card bg-gradient-to-r from-green-500 to-green-700 p-6 rounded-lg shadow-lg  ">
@@ -13,13 +13,8 @@ const SkillCard = ({ icon, title, description, isVisible }) => {
         );
 };
 
-const SkillsSection = () => {
+const SkillsSection = (transition) => {
 
-    const [isVisible, setIsVisible] = useState(false);
-    
-    const handleMouseEnter = () => {
-        setIsVisible(true);
-    }
 
     const skillsData = [
         {
@@ -56,12 +51,12 @@ const SkillsSection = () => {
     ];
 
     return (
-        <section onMouseEnter={handleMouseEnter} className="py-12 bg-gray-900 text-white md:h-svh sm:h-full">
-        <div  className={`flex flex-col items-center container mx-auto px-4 tr transition-opacity duration-1000 ${isVisible ? `opacity-100` : `opacity-0`}  `}>
+        <section ClassName={`py-12 bg-gray-900 text-white transition-opacity duration-1000 ${transition ? `opacity-0` : `opacity-100`} md:h-svh sm:h-full`}>
+        <div  className={`flex flex-col items-center container mx-auto px-4 tr `}>
             <h2 className="text-3xl font-bold mb-8 text-center">Mis habilidades</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:w-[60em] ">
             {skillsData.map((skill, index) => (
-                <SkillCard key={index} icon={skill.icon} title={skill.title} description={skill.description} isVisible={isVisible} />
+                <SkillCard key={index} icon={skill.icon} title={skill.title} description={skill.description}/>
             ))}
             </div>
         </div>
