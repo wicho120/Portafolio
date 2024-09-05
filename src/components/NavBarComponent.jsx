@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBarComponent = (transition) => {
   return (
-    <nav class="top-0 sticky bg-gradient-to-b from-gray-800 to-transparent backdrop-blur">
+    <nav class="top-0 sticky bg-gradient-to-b from-gray-800 to-transparent backdrop-blur z-50">
       <div class={`max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>
         <a
           href="https://flowbite.com/"

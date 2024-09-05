@@ -3,6 +3,7 @@ import NavBarComponent from './components/NavBarComponent';
 import SkillComponent from './components/SkillComponent';
 import rocket from "./assets/rocket.svg"
 import PresentComponent from './components/PresentPage';
+import AboutMe from './components/AboutMe';
 
 const App = () => {
   const [text, setText] = useState("");
@@ -98,6 +99,7 @@ const handleMouseEnter = ()=>{
       <div className='bg-gray-900'>
             <NavBarComponent transition={transition}></NavBarComponent>
             <PresentComponent transition={transition}></PresentComponent>
+            <AboutMe transition={transition}></AboutMe>
             <SkillComponent transition={transition}></SkillComponent>
       </div>
     );
