@@ -22,7 +22,7 @@ const SkillsSection = (transition) => {
         description: 'He diseñado y creado bases de datos en base a las historias de usuario y logica de negocios con motores como MySQL y MongoDB',
         }
     ];
-    console.log(transition)
+    
     return (
         <section className={`py-12 bg-gray-900 text-white  lg:h-svh md:h-dvh`}>
         <div  className={`flex flex-col items-center container mx-auto px-4 tr transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>

@@ -4,6 +4,7 @@ import SkillComponent from './components/SkillComponent';
 import rocket from "./assets/rocket.svg"
 import PresentComponent from './components/PresentPage';
 import AboutMe from './components/AboutMe';
+import ProjectPage from "./components/ProjectPage"
 
 const App = () => {
   const [text, setText] = useState("");
@@ -101,6 +102,7 @@ const handleMouseEnter = ()=>{
             <PresentComponent transition={transition}></PresentComponent>
             <AboutMe transition={transition}></AboutMe>
             <SkillComponent transition={transition}></SkillComponent>
+            <ProjectPage transition={transition}></ProjectPage> 
       </div>
     );
   }

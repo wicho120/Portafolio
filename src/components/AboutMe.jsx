@@ -3,8 +3,6 @@ import william from "../assets/william.webp"
 
 
 const AboutMe = (transition) => {
-
-    console.log(transition)
     return (
         <section className={`flex py-12 items-center justify-content text-white h-svh- mb-20 `}>
         <div  className={`flex flex-col items-center justify-content bg-gray-800 w-[20em] h-[35em] container mx-auto px-4 tr rounded-sm sm:flex-row sm:w-[40em] sm:h-[20em] transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`} `}>
