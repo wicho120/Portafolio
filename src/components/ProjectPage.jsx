@@ -11,18 +11,21 @@ const ProjectPage = (transition) => {
 
     useEffect(() => {
         console.log("entre a useEffect")
-        const interval = setInterval(() => {
-            console.log("entre a interval", active)         
-            if(active){
-                if(isTouch) {
-                    setIsTouch(false)
-                }else if(!isTouch){
-                    setIsTouch(true)
-
+        if(active){
+            const interval = setTimeout(() => {
+                console.log("entre a interval", active)         
+                if(active){
+                    if(isTouch) {
+                        setIsTouch(false)
+                    }else if(!isTouch){
+                        setIsTouch(true)
+                    }
                 }
-            }
-        }, 2000)
-    }, [setIsTouch, active])
+            }, 1500)
+            return () => clearTimeout(interval)
+        }
+
+    }, [setIsTouch, active, isTouch])
 
 
 
@@ -34,11 +37,12 @@ const ProjectPage = (transition) => {
     const handleMouseLeave = () => {
         console.log("sali de handle")
         setActive(false)
+        setIsTouch(false)
     }
 
     const skillsData = [
         {
-        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg  transition-all duration-500 transform hover:scale-105 ${isTouch ? "shadow-xl shadow-red-500" : "shadow-lg"}`}></img>,
+        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg  transition-all duration-800 transform hover:scale-105 ${active ? isTouch ? "shadow-xl shadow-red-500" : "shadow-lg shadow-red-500" : ""}`}></img>,
         title: 'Desarrollo Backend',
         description: 'Con mi experiencia he podido llevar a cabo aplicaciones web complejas que requieren la creacion y consumos de API´S asi como su integracion con bases de datos y frontend',
         },
@@ -56,11 +60,11 @@ const ProjectPage = (transition) => {
 
     return (
         <section className={`py-12 bg-gray-900 text-white`}>
-        <div  className={`flex flex-col items-center container mx-auto px-4 tr transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>
-            <div  className="flex flex-col gap-8 lg:w-[80em]" >
+        <div  className={`flex flex-col items-center justify-center container mx-auto px-4 tr transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>
+            <div  className="flex flex-col gap-8" >
             {skillsData.map((skill, index) => (
-                <div className={`flex skill-card  bg-gradient-to-r from-green-500 to-green-700 p-6 rounded-lg shadow-lg`}>
-                    <div className="flex items-center h-[30em] w-[60em] justify-center">
+                <div className={`flex flex-col w-[20em] skill-card bg-gradient-to-r from-green-500 to-green-700 p-6 rounded-lg shadow-lg md:flex-row md:w-[80em]`}>
+                    <div className="flex flex-items-center w-[150em] justify-center md:h-[25em] md:w-[60em]">
                         {skill.icon}
                     </div>
                     <div className='flex flex-col items-center justify-center ml-5'>
