@@ -3,6 +3,10 @@ import william from "../assets/william.webp"
 import cinema from "../assets/cinema.svg"
 import frontend from "../assets/frontend.png"
 import database from "../assets/database.png"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const ProjectPage = (transition) => {
 
@@ -42,38 +46,38 @@ const ProjectPage = (transition) => {
 
     const skillsData = [
         {
-        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg  transition-all duration-800 transform hover:scale-105 ${active ? isTouch ? "shadow-xl shadow-red-500" : "shadow-lg shadow-red-500" : ""}`}></img>,
-        title: 'Desarrollo Backend',
-        description: 'Con mi experiencia he podido llevar a cabo aplicaciones web complejas que requieren la creacion y consumos de API´S asi como su integracion con bases de datos y frontend',
+        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg  transition-all duration-15 00 transform hover:scale-105 ${active ? isTouch ? "shadow-xl shadow-red-500" : "shadow-lg shadow-red-500" : ""}`}></img>,
         },
         {
-        icon: <img src={frontend} className="w-8 h-8 text-blue-300 mr-3"></img>,
-        title: 'Desarollo Frontend',
-        description: 'Tengo conocimientos en React y Tailwind, herramientas con las cuales puedo llevar a cabo cualquier diseño prestablecido para cualquier proyecto web',
+        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg  transition-all duration-15 00 transform hover:scale-105 ${active ? isTouch ? "shadow-xl shadow-red-500" : "shadow-lg shadow-red-500" : ""}`}></img>,
         },
         {
-        icon: <img src={database} className="w-8 h-8 text-green-300 mr-3"></img>,
-        title: 'Bases de datos',
-        description: 'He diseñado y creado bases de datos en base a las historias de usuario y logica de negocios con motores como MySQL y MongoDB',
+        icon: <img onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} src={cinema} className={`object-cover rounded-lg ${active ? isTouch ? "shadow-xl shadow-red-500" : "shadow-lg shadow-red-500" : ""}`}></img>,
         }
     ];
 
     return (
         <section className={`py-12 bg-gray-900 text-white`}>
         <div  className={`flex flex-col items-center justify-center container mx-auto px-4 tr transition-opacity duration-1000 ${transition.transition ? `opacity-100` : `opacity-0`}`}>
-            <div  className="flex flex-col gap-8" >
-            {skillsData.map((skill, index) => (
-                <div className={`flex flex-col w-[20em] skill-card bg-gradient-to-r from-green-500 to-green-700 p-6 rounded-lg shadow-lg md:flex-row md:w-[80em]`}>
+            <div  className=" gap-8" >
+            <div className={`flex flex-col w-[20em] skill-card bg-gradient-to-r from-green-500 to-green-700 p-6 rounded-lg shadow-lg md:flex-row md:w-[80em] transition-all duration-15 00 transform hover:scale-105`}>
+            <Swiper
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                className="mySwiper"
+                >
+                {skillsData.map((skill, index) => (
+                <SwiperSlide className='flex items-center justify-center'>
                     <div className="flex flex-items-center w-[150em] justify-center md:h-[25em] md:w-[60em]">
                         {skill.icon}
                     </div>
-                    <div className='flex flex-col items-center justify-center ml-5'>
-                        <h3 className="text-xl font-semibold">{skill.title}</h3>
-                        <p className='text-center'>{skill.description}</p>
-                    </div>
-                    
-                </div>
-            ))}
+                </SwiperSlide>
+            ))}         
+                </Swiper>
+
+            </div>
             </div>
         </div>
         </section>
